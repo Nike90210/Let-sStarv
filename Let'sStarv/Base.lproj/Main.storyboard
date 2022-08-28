@@ -14,88 +14,11 @@
                 <viewController id="HNL-Io-7v1" customClass="ViewController" customModule="Let_sStarv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-cU-9wn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Bjv-mv-B5P">
-                                <rect key="frame" x="20" y="154" width="374" height="212"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="vft-XG-hpm">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-st-8eM">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <segue destination="R79-mm-Sw2" kind="show" id="5N0-Ya-H4V"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm8-8D-g3t">
-                                                <rect key="frame" x="228" y="0.0" width="146" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <segue destination="G2E-OX-d9S" kind="show" id="1kz-Td-Fq8"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <viewLayoutGuide key="safeArea" id="p0k-JA-XJI"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-hk-9Me">
-                                        <rect key="frame" x="0.0" y="181" width="374" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wy-OI-XiH">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <segue destination="rvW-ZV-KvK" kind="show" id="XwC-Au-7cw"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJF-FP-RcH">
-                                                <rect key="frame" x="228" y="0.0" width="146" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <segue destination="tYA-qZ-JLT" kind="show" id="4Ad-2T-ZYY"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="lmm-Ly-gtR"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.69999999999999996"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5e-dN-f1J">
-                                <rect key="frame" x="20" y="688" width="374" height="93"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="F8E-J8-uBb"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="6dV-VM-Roe" kind="show" id="pJo-m4-2I0"/>
-                                </connections>
-                            </button>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <viewLayoutGuide key="safeArea" id="r1K-de-vWo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="c5e-dN-f1J" firstAttribute="leading" secondItem="Bjv-mv-B5P" secondAttribute="leading" id="5lf-ox-0tb"/>
-                            <constraint firstAttribute="right" secondItem="Bjv-mv-B5P" secondAttribute="right" constant="20" id="5zR-c4-cgT"/>
-                            <constraint firstItem="Bjv-mv-B5P" firstAttribute="leading" secondItem="gPc-cU-9wn" secondAttribute="leading" constant="20" id="MDh-cD-AR4"/>
-                            <constraint firstItem="Bjv-mv-B5P" firstAttribute="top" secondItem="gPc-cU-9wn" secondAttribute="top" constant="154" id="R9b-QF-kuK"/>
-                            <constraint firstAttribute="bottom" secondItem="c5e-dN-f1J" secondAttribute="bottom" constant="115" id="iqP-oR-a81"/>
-                            <constraint firstItem="c5e-dN-f1J" firstAttribute="trailing" secondItem="Bjv-mv-B5P" secondAttribute="trailing" id="mvh-S3-8F7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QTd-V8-iOb"/>
-                    <connections>
-                        <outlet property="customHrs" destination="c5e-dN-f1J" id="tNy-VZ-H8k"/>
-                        <outlet property="fourtyFourHrs" destination="gJF-FP-RcH" id="6un-MN-NnG"/>
-                        <outlet property="sixteenHrs" destination="QJP-st-8eM" id="6Ie-0v-X2h"/>
-                        <outlet property="thirtySixHrs" destination="7Wy-OI-XiH" id="95I-fQ-Z0f"/>
-                        <outlet property="twentyFourHrs" destination="xm8-8D-g3t" id="hdt-8J-Agn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHS-gl-4EB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

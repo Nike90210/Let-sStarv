@@ -3,73 +3,110 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-
     
+// MARK: - Создание кнопок
+    let sixteenHrs : UIButton = {
+        let sixButton = UIButton()
+        sixButton.layer.cornerRadius = 10
+        sixButton.backgroundColor = .black
+        sixButton.setTitle("16HRS", for: .normal)
+        sixButton.translatesAutoresizingMaskIntoConstraints = false
+        return sixButton
+    }()
     
+    let twentyForHrs : UIButton = {
+        let twentyButton = UIButton()
+        twentyButton.layer.cornerRadius = 10
+        twentyButton.backgroundColor = .black
+        twentyButton.setTitle("24HRS", for: .normal)
+        twentyButton.translatesAutoresizingMaskIntoConstraints = false
+        return twentyButton
+    }()
     
-    @IBOutlet weak var sixteenHrs: UIButton! {
-        didSet {
-            sixteenHrs.titleLabel?.textColor = .black
-            sixteenHrs.backgroundColor = UIColor.clear
-            sixteenHrs.titleLabel?.text = "16Hrs"
-            sixteenHrs.layer.cornerRadius = 16.0
-            sixteenHrs.layer.borderWidth = 2.0
-          
-            
-        }
-    }
+    let thirtySix : UIButton = {
+        let thirtyButton = UIButton()
+        thirtyButton.layer.cornerRadius = 10
+        thirtyButton.backgroundColor = .black
+        thirtyButton.setTitle("36HRS", for: .normal)
+        thirtyButton.translatesAutoresizingMaskIntoConstraints = false
+        return thirtyButton
+    }()
     
-    @IBOutlet weak var twentyFourHrs: UIButton!{
-        didSet{
-            twentyFourHrs.titleLabel?.textColor = .orange
-            twentyFourHrs.backgroundColor = UIColor.clear
-            twentyFourHrs.titleLabel?.text = "24Hrs"
-           
-            twentyFourHrs.layer.cornerRadius = 16.0
-            twentyFourHrs.layer.borderWidth = 2.0
-           
-        }
-    }
+    let fortyeight : UIButton = {
+        let fourtybutton = UIButton()
+        fourtybutton.layer.cornerRadius = 10
+        fourtybutton.backgroundColor = .black
+        fourtybutton.setTitle("48HRS", for: .normal)
+        fourtybutton.translatesAutoresizingMaskIntoConstraints = false
+        return fourtybutton
+    }()
     
-    @IBOutlet weak var thirtySixHrs: UIButton!{
-        didSet{
-            thirtySixHrs.titleLabel?.textColor = .orange
-            thirtySixHrs.backgroundColor = UIColor.clear
-            thirtySixHrs.titleLabel?.text = "36Hrs"
-   
-            thirtySixHrs.layer.cornerRadius = 16.0
-            thirtySixHrs.layer.borderWidth = 2.0
-           
-        }
-    }
-    
-    @IBOutlet weak var fourtyFourHrs: UIButton!{
-        didSet{
-            fourtyFourHrs.titleLabel?.textColor = .black
-            fourtyFourHrs.backgroundColor = UIColor.clear
-            fourtyFourHrs.titleLabel?.text = "48Hrs"
-            fourtyFourHrs.layer.cornerRadius = 16.0
-            fourtyFourHrs.layer.borderWidth = 2.0
-           
-        }
-    }
-    
-    @IBOutlet weak var customHrs: UIButton!{
-        didSet{
-            customHrs.titleLabel?.textColor = .white
-            customHrs.backgroundColor = UIColor.clear
-            customHrs.titleLabel?.text = "Custom"
-            customHrs.layer.cornerRadius = 16.0
-            customHrs.layer.borderWidth = 2.0
-         
-        }
-    }
+    let customButton : UIButton = {
+        let custom = UIButton()
+        custom.layer.cornerRadius = 10
+        custom.backgroundColor = .black
+        custom.setTitle("Custom", for: .normal)
+        custom.translatesAutoresizingMaskIntoConstraints = false
+        return custom
+    }()
     
     override func viewDidLoad() {
-        
+        setConstraint()
     }
-  
+    
     
 }
 
+//MARK: - Закрепляем кнопки на View
+extension ViewController {
+    
+    func setConstraint(){
+        view.addSubview(sixteenHrs)
+        NSLayoutConstraint.activate([
+            sixteenHrs.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
+            sixteenHrs.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
+            sixteenHrs.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -220),
+            sixteenHrs.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+        
+        view.addSubview(twentyForHrs)
+        NSLayoutConstraint.activate([
+            twentyForHrs.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
+            twentyForHrs.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 220),
+            twentyForHrs.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
+            twentyForHrs.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+        
+        view.addSubview(thirtySix)
+        NSLayoutConstraint.activate([
+            thirtySix.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            thirtySix.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            thirtySix.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
+            thirtySix.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -220),
+            thirtySix.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+        
+        view.addSubview(fortyeight)
+        NSLayoutConstraint.activate([
+            fortyeight.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            fortyeight.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            fortyeight.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 220),
+            fortyeight.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
+            fortyeight.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+        
+        view.addSubview(customButton)
+        NSLayoutConstraint.activate([
+            customButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -250),
+            customButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            customButton.heightAnchor.constraint(equalToConstant: 50),
+            customButton.widthAnchor.constraint(equalToConstant: 100)
+            
+        ])
+        
+    }
+}
