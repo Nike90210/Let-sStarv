@@ -131,9 +131,9 @@ class SixtennHrs: UIViewController {
     
     // Преобразования колличества секунд в часы,минуты и секунды
     func timeString (time: TimeInterval) -> String {
-        var hours = Int(sixteenHours) / 3600
-        var minutes = Int(sixteenHours) / 60 % 60
-        var second = Int(sixteenHours) % 60
+        let hours = Int(sixteenHours) / 3600
+        let minutes = Int(sixteenHours) / 60 % 60
+        let second = Int(sixteenHours) % 60
         return String(format: "%02i:%02i:%02i", hours,minutes,second)
     }
     

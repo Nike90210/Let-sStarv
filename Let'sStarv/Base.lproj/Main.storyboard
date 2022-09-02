@@ -19,6 +19,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="QTd-V8-iOb"/>
+                    <connections>
+                        <segue destination="R79-mm-Sw2" kind="show" identifier="showSixteen" id="Ao3-WQ-d3D"/>
+                        <segue destination="rvW-ZV-KvK" kind="show" identifier="showThirtySix" id="5tJ-V6-VSH"/>
+                        <segue destination="G2E-OX-d9S" kind="show" identifier="showTwentyFour" id="JHm-4U-50i"/>
+                        <segue destination="6dV-VM-Roe" kind="show" identifier="showFourtyEight" id="wOa-jw-MjA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHS-gl-4EB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

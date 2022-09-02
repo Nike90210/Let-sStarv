@@ -9,7 +9,7 @@ import UIKit
 
 class FourtyHeightHrs: UIViewController {
     
-    var sixteenHours = (60 * 60) * 48
+    var fourtyEight = (60 * 60) * 48
     let shapeLayer = CAShapeLayer()
     var timer = Timer()
     var isTimerRunning = false
@@ -17,7 +17,7 @@ class FourtyHeightHrs: UIViewController {
     
     // MARK: - Labels and Buttons
     
-    let timerLabel : UILabel = {
+    let timerLabelFE : UILabel = {
         let label = UILabel()
         label.text = "48:00:00"
         label.textColor = .black
@@ -114,29 +114,29 @@ class FourtyHeightHrs: UIViewController {
     }
     
     @objc func coundDownTimer (){
-        if sixteenHours < 1 {
+        if fourtyEight < 1 {
             cancel()
 
         } else {
-            sixteenHours -= 1
-            timerLabel.text = timeString(time: TimeInterval(sixteenHours))
+            fourtyEight -= 1
+            timerLabelFE.text = timeString(time: TimeInterval(fourtyEight))
             
         }
     }
     
     @objc func cancel() {
         timer.invalidate()
-        sixteenHours = ( 60 * 60 ) * 48
-        timerLabel.text = timeString(time: TimeInterval(sixteenHours))
+        fourtyEight = ( 60 * 60 ) * 48
+        timerLabelFE.text = timeString(time: TimeInterval(fourtyEight))
         startbutton.setTitle("Start", for: .normal)
         
     }
     
     // Преобразования колличества секунд в часы,минуты и секунды
     func timeString (time: TimeInterval) -> String {
-        var hours = Int(sixteenHours) / 3600
-        var minutes = Int(sixteenHours) / 60 % 60
-        var second = Int(sixteenHours) % 60
+        let hours = Int(fourtyEight) / 3600
+        let minutes = Int(fourtyEight) / 60 % 60
+        let second = Int(fourtyEight) % 60
         return String(format: "%02i:%02i:%02i", hours,minutes,second)
     }
     
@@ -156,10 +156,10 @@ extension FourtyHeightHrs {
         ])
         
         
-        view.addSubview(timerLabel)
+        view.addSubview(timerLabelFE)
         NSLayoutConstraint.activate([
-            timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            timerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            timerLabelFE.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerLabelFE.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
         view.addSubview(startbutton)

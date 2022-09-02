@@ -9,7 +9,7 @@ import UIKit
 
 class TwentyFourHrs: UIViewController {
     
-    var sixteenHours = (60 * 60) * 24
+    var twentyFour = (60 * 60) * 24
     let shapeLayer = CAShapeLayer()
     var timer = Timer()
     var isTimerRunning = false
@@ -114,29 +114,29 @@ class TwentyFourHrs: UIViewController {
     }
     
     @objc func coundDownTimer (){
-        if sixteenHours < 1 {
+        if twentyFour < 1 {
             cancel()
 
         } else {
-            sixteenHours -= 1
-            timerLabel.text = timeString(time: TimeInterval(sixteenHours))
+            twentyFour -= 1
+            timerLabel.text = timeString(time: TimeInterval(twentyFour))
             
         }
     }
     
     @objc func cancel() {
         timer.invalidate()
-        sixteenHours = ( 60 * 60 ) * 24
-        timerLabel.text = timeString(time: TimeInterval(sixteenHours))
+        twentyFour = ( 60 * 60 ) * 24
+        timerLabel.text = timeString(time: TimeInterval(twentyFour))
         startbutton.setTitle("Start", for: .normal)
         
     }
     
     // Преобразования колличества секунд в часы,минуты и секунды
     func timeString (time: TimeInterval) -> String {
-        var hours = Int(sixteenHours) / 3600
-        var minutes = Int(sixteenHours) / 60 % 60
-        var second = Int(sixteenHours) % 60
+        let hours = Int(twentyFour) / 3600
+        let minutes = Int(twentyFour) / 60 % 60
+        let second = Int(twentyFour) % 60
         return String(format: "%02i:%02i:%02i", hours,minutes,second)
     }
     

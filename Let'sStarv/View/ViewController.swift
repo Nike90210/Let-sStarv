@@ -4,15 +4,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-// MARK: - Создание кнопок
+    // MARK: - Создание кнопок
+    
+    // MARK: - 16 часов
+    @objc func sixteenScreen (_ sender: UIButton ){
+        performSegue(withIdentifier: "showSixteen", sender: self)
+    }
+    
     let sixteenHrs : UIButton = {
         let sixButton = UIButton()
         sixButton.layer.cornerRadius = 10
         sixButton.backgroundColor = .black
         sixButton.setTitle("16HRS", for: .normal)
         sixButton.translatesAutoresizingMaskIntoConstraints = false
+        sixButton.addTarget(self, action: #selector(sixteenScreen(_:)), for: .touchUpInside)
         return sixButton
     }()
+    
+    
+    // MARK: -24 часов
+    @objc func twentyFour (_ sender: UIButton ){
+        performSegue(withIdentifier: "showTwentyFour", sender: self)
+    }
     
     let twentyForHrs : UIButton = {
         let twentyButton = UIButton()
@@ -20,28 +33,42 @@ class ViewController: UIViewController {
         twentyButton.backgroundColor = .black
         twentyButton.setTitle("24HRS", for: .normal)
         twentyButton.translatesAutoresizingMaskIntoConstraints = false
+        twentyButton.addTarget(self, action: #selector(twentyFour(_:)), for: .touchUpInside)
         return twentyButton
     }()
     
-    let thirtySix : UIButton = {
+    // MARK: - 36 часов
+    @objc func thirtySix (_ sender: UIButton ){
+        performSegue(withIdentifier: "showThirtySix", sender: self)
+    }
+    
+    let thirtySixHrs : UIButton = {
         let thirtyButton = UIButton()
         thirtyButton.layer.cornerRadius = 10
         thirtyButton.backgroundColor = .black
         thirtyButton.setTitle("36HRS", for: .normal)
         thirtyButton.translatesAutoresizingMaskIntoConstraints = false
+        thirtyButton.addTarget(self, action: #selector(thirtySix(_:)), for: .touchUpInside)
         return thirtyButton
     }()
     
-    let fortyeight : UIButton = {
+    // MARK: -48 часов
+    @objc func fourtyEight (_ sender: UIButton ){
+        performSegue(withIdentifier: "showFourtyEight", sender: self)
+    }
+    
+    let fortyeightHrs : UIButton = {
         let fourtybutton = UIButton()
         fourtybutton.layer.cornerRadius = 10
         fourtybutton.backgroundColor = .black
         fourtybutton.setTitle("48HRS", for: .normal)
         fourtybutton.translatesAutoresizingMaskIntoConstraints = false
+        fourtybutton.addTarget(self, action: #selector(fourtyEight(_:)), for: .touchUpInside)
         return fourtybutton
     }()
     
-    let customButton : UIButton = {
+    // MARK: - Кастом
+    let customButtonHrs : UIButton = {
         let custom = UIButton()
         custom.layer.cornerRadius = 10
         custom.backgroundColor = .black
@@ -51,7 +78,9 @@ class ViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         setConstraint()
+        self.view.addSubview(sixteenHrs)
     }
     
     
@@ -79,32 +108,32 @@ extension ViewController {
             
         ])
         
-        view.addSubview(thirtySix)
+        view.addSubview(thirtySixHrs)
         NSLayoutConstraint.activate([
-            thirtySix.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            thirtySix.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            thirtySix.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
-            thirtySix.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -220),
-            thirtySix.heightAnchor.constraint(equalToConstant: 50),
+            thirtySixHrs.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            thirtySixHrs.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            thirtySixHrs.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 30),
+            thirtySixHrs.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -220),
+            thirtySixHrs.heightAnchor.constraint(equalToConstant: 50),
             
         ])
         
-        view.addSubview(fortyeight)
+        view.addSubview(fortyeightHrs)
         NSLayoutConstraint.activate([
-            fortyeight.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            fortyeight.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            fortyeight.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 220),
-            fortyeight.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
-            fortyeight.heightAnchor.constraint(equalToConstant: 50),
+            fortyeightHrs.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            fortyeightHrs.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            fortyeightHrs.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 220),
+            fortyeightHrs.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -30),
+            fortyeightHrs.heightAnchor.constraint(equalToConstant: 50),
             
         ])
         
-        view.addSubview(customButton)
+        view.addSubview(customButtonHrs)
         NSLayoutConstraint.activate([
-            customButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -250),
-            customButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            customButton.heightAnchor.constraint(equalToConstant: 50),
-            customButton.widthAnchor.constraint(equalToConstant: 100)
+            customButtonHrs.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -250),
+            customButtonHrs.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            customButtonHrs.heightAnchor.constraint(equalToConstant: 50),
+            customButtonHrs.widthAnchor.constraint(equalToConstant: 100)
             
         ])
         
