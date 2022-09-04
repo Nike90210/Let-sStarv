@@ -96,7 +96,7 @@ class FourtyHeightHrs: UIViewController {
     
     
     @objc func startTimer(){
-       
+        
         if isTimerRunning == false {
             timerRunnin()
             startbutton.setTitle("play", for: .normal)
@@ -116,7 +116,7 @@ class FourtyHeightHrs: UIViewController {
     @objc func coundDownTimer (){
         if fourtyEight < 1 {
             cancel()
-
+            
         } else {
             fourtyEight -= 1
             timerLabelFE.text = timeString(time: TimeInterval(fourtyEight))

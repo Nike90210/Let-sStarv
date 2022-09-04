@@ -68,12 +68,17 @@ class ViewController: UIViewController {
     }()
     
     // MARK: - Кастом
+    @objc func custom(_ sender: UIButton){
+        performSegue(withIdentifier: "showCustom", sender: self)
+    }
+    
     let customButtonHrs : UIButton = {
         let custom = UIButton()
         custom.layer.cornerRadius = 10
         custom.backgroundColor = .black
         custom.setTitle("Custom", for: .normal)
         custom.translatesAutoresizingMaskIntoConstraints = false
+        custom.addTarget(self, action: #selector(custom(_:)), for: .touchUpInside)
         return custom
     }()
     
@@ -136,6 +141,8 @@ extension ViewController {
             customButtonHrs.widthAnchor.constraint(equalToConstant: 100)
             
         ])
+        
+        
         
     }
 }
