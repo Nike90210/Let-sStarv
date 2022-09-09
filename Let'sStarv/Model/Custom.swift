@@ -16,6 +16,7 @@ class Custom: UIViewController {
     var timerLabel = UILabel()
     var datePicker = UIDatePicker()
     var startButton = UIButton()
+    var stopButton = UIButton()
     
     
     // MARK: - Labels and Buttons
@@ -53,18 +54,33 @@ class Custom: UIViewController {
         datePicker.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
         datePicker.center = view.center
         datePicker.addTarget(self, action: #selector(chooseTimerPicker(sender:)), for: .valueChanged)
-        
-        datePicker.preferredDatePickerStyle = .compact
+   
+        datePicker.preferredDatePickerStyle = .wheels
         
         
         view.addSubview(startButton)
-        startButton.frame = CGRect(x: 0, y: view.frame.height - 100, width: 110, height: 48)
+        startButton.frame = CGRect(x: 0, y: view.frame.height - 200, width: 300, height: 70)
         startButton.setTitle("Start", for: .normal)
         startButton.center.x = view.center.x
-        startButton.setTitleColor(.black, for: .normal)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.backgroundColor = .black
+        startButton.layer.cornerRadius = 15
+        startButton.layer.borderWidth = 2
         startButton.layer.borderColor = UIColor.black.cgColor
         startButton.addTarget(self, action: #selector(startTimer(sender:)), for: .touchUpInside)
-      
+        
+        view.addSubview(stopButton)
+        stopButton.frame = CGRect(x: 0, y: view.frame.height - 100, width: 300, height: 70)
+        stopButton.setTitle("Stop", for: .normal)
+        stopButton.center.x = view.center.x
+        stopButton.setTitleColor(.white, for: .normal)
+        stopButton.backgroundColor = .black
+        stopButton.layer.borderColor = UIColor.black.cgColor
+        stopButton.layer.borderWidth = 2
+        stopButton.layer.cornerRadius = 15
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
+        
+        
     }
     
     //MARK: - timer
@@ -83,21 +99,21 @@ class Custom: UIViewController {
         }
     }
     
-   @objc func timerCountDown(){
-       timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-           if self.count == 0{
-               self.stopTimer()
-           }else{
-               self.count -= 1
-               self.timerLabel.text = "\(self.count)"
-           }
-       })
+    @objc func timerCountDown(){
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            if self.count == 0{
+                self.stopTimer()
+            }else{
+                self.count -= 1
+                self.timerLabel.text = "\(self.count)"
+            }
+        })
     }
-
+    
     @objc func stopTimer(){
         timer?.invalidate()
     }
-
-
+    
+    
 }
 
