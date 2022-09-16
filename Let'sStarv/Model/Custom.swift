@@ -12,6 +12,7 @@ class Custom: UIViewController {
     var timer : Timer?
     var count  = 0
     var timerDate = 0.0
+    let shapeLayer = CAShapeLayer()
     
     var timerLabel = UILabel()
     var datePicker = UIDatePicker()
@@ -38,6 +39,8 @@ class Custom: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        animationCircle()
+        
         view.backgroundColor = .white
         
         
@@ -52,10 +55,11 @@ class Custom: UIViewController {
         
         view.addSubview(datePicker)
         datePicker.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        datePicker.center = view.center
+        datePicker.center.x = view.center.x
+        datePicker.center.y = view.center.y
         datePicker.addTarget(self, action: #selector(chooseTimerPicker(sender:)), for: .valueChanged)
-   
-        datePicker.preferredDatePickerStyle = .wheels
+        
+        datePicker.preferredDatePickerStyle = .automatic
         
         
         view.addSubview(startButton)
@@ -112,8 +116,32 @@ class Custom: UIViewController {
     
     @objc func stopTimer(){
         timer?.invalidate()
+        timerLabel.text = ""
+        startButton.setTitle("play", for: .normal)
     }
     
     
+    
+    
+    //MARK: - Animation
+    
+    func animationCircle(){
+        
+        let endAngle = (-CGFloat.pi / 2)
+        let startAngle = 2 * CGFloat.pi + endAngle
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: view.center.x, y: view.center.y  + 120), radius: 70, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.strokeEnd = 1
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.lineWidth = 10
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        view.layer.addSublayer(shapeLayer)
+        
+    }
+    
 }
+
 
